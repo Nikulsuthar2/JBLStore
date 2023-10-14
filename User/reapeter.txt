@@ -1,0 +1,50 @@
+
+protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
+{
+	if (e.CommandName == "AddQty")
+	{
+		String pid = e.CommandArgument.ToString()
+		String qty = ((TextBox)e.Item.FindControl("txtQty") as TextBox).Text;
+	}
+}
+
+<asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="Repeater1_ItemCommand">
+	<ItemTemplate>
+		<table>
+			<tr>
+				<td>
+					<asp:Label ID="lblPid" runat="server" Text='<%# Eval("pid") %>'></asp:Label>
+				</td>
+				<td>
+					<asp:TextBox ID="txtQty" runat="server"></asp:TextBox>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<asp:Button ID="btnAddQty" runat="server" Text="Buy" CssClass="btnLogin" CommandName="AddQty" CommandArgument='<%# Eval("pid") %>' />
+				</td>
+			</tr>
+		</table>
+		<a href='<%# "ProductDetails.aspx?pid=" + Eval("pid") %>' style="text-decoration:none">
+			<div class="small-product-card">
+				<asp:Image ID="imgSP" runat="server" ImageUrl='<%# Eval("image") %>' Width="100%"/>
+				<asp:LinkButton ID="lblSPName" runat="server" Font-Bold="True" PostBackUrl='<%# "ProductDetails.aspx?pid=" + Eval("pid") %>' ><%# Eval("name") %></asp:LinkButton>
+				<asp:Label ID="lblSPid" runat="server" Text='<%# Eval("pid") %>' Visible="false"></asp:Label>
+				<div>
+					<asp:Label ID="lblSPPrice" runat="server" Text='<%# "&#8377 " + Eval("price") %>' Font-Strikeout='<%# Int32.Parse(Eval("discount").ToString()) > 0 ? true : false %>'></asp:Label>
+					<asp:Label ID="lblSPDcnt" runat="server" Text='<%# Eval("discount") + "%" %>' ForeColor="Red" Font-Bold="True"></asp:Label>
+					<asp:Label ID="Label5" runat="server" Text='<%# "&#8377;" +
+						(Double.Parse(Eval("price").ToString()) - (Double.Parse(Eval("price").ToString()) * (Double.Parse(Eval("discount").ToString()) / 100))).ToString()
+					%>' ForeColor="Green" Font-Bold="True"></asp:Label>
+				</div>
+				<div style="display:flex;gap:10px">
+					<asp:Label ID="lblInStock" runat="server" Text="Out of stock" Visible="False" Font-Bold="True" ForeColor="Red"></asp:Label>
+					<asp:Button ID="btnSPatc" runat="server" Text="Add to cart" CommandName="atcProduct" CommandArgument='<%# Eval("pid") %>' CssClass="btnPrimary" width="100%"/>
+					<asp:Button ID="btnSPBuy" runat="server" Text="Buy" CssClass="btnLogin" CommandName="buyProduct" CommandArgument='<%# Eval("pid") %>' />
+				</div>
+			</div>
+		</a>
+	</ItemTemplate>
+</asp:Repeater>
+
+

@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="JBLStore.Admin.AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="../CSS/style.css"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="position:fixed;width:100%;z-index:100">
+            <div class="navbar">
+                <div style="display: flex; gap: 10px;align-items:center;">
+                    <asp:Image ID="Image1" runat="server" Width="40px" ImageUrl="~/Images/Assets/JBL_logo.png" />
+                    <asp:Label ID="Label1" runat="server" Text="Admin" Font-Bold="True" ForeColor="OrangeRed"></asp:Label>  
+                </div>
+                <div style="display: flex; gap: 10px;align-items:center;">
+                    <asp:Label ID="lblAdminName" runat="server"></asp:Label>
+                    <asp:Button ID="btnLogout" CssClass="btnLogin" runat="server" Text="Logout" OnClick="btnLogout_Click" Visible="False" CausesValidation="False" />
+                </div>
+            </div>
+            <div class="menu">
+                <asp:HyperLink ID="hlDashboard" runat="server" NavigateUrl="Dashboard.aspx">Dashboard</asp:HyperLink>
+                <asp:HyperLink ID="hlProduct" runat="server" NavigateUrl="Product.aspx">Product</asp:HyperLink>
+                <asp:HyperLink ID="hlStock" runat="server" NavigateUrl="Stock.aspx">Stock</asp:HyperLink>
+                <asp:HyperLink ID="hlUsers" runat="server" NavigateUrl="Customer.aspx">Customers</asp:HyperLink>
+                <asp:HyperLink ID="hlOrders" runat="server" NavigateUrl="Orders.aspx" style="display:flex;gap: 5px">Orders <div id="newOrder"></div></asp:HyperLink>
+                <asp:HyperLink ID="hlSellReports" runat="server" NavigateUrl="SalesReport.aspx">Sales Report</asp:HyperLink>
+            </div>
+        </div>
+        <div style="position:relative;width:100%;top:90px;z-index:0">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script>
+        var newOrder = document.getElementById("newOrder");
+        
+        setInterval(() => {
+            
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "API/getNewOrder.aspx", true);
+            xhr.onload = () => {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    if (xhr.status == 200) {
+                        if (xhr.response != "0") {
+                            newOrder.innerHTML = "<p style='background-color:red;border-radius:50%;padding:0px 6px;font-size:15px;'>" + xhr.response + "<p>";
+                        }
+                        else {
+                            newOrder.innerHTML = "";
+                        }
+                    }
+                }
+            }
+            xhr.send();
+        }, 500);
+    </script>
+</body>
+</html>

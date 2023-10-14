@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserMaster.master.cs" Inherits="JBLStore.User.UserMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar" style="border-bottom:1px solid #cbcbcb;position:fixed;width:100%;z-index:100;">
+            <div style="display:flex;gap:10px;align-items:center;">
+                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/Assets/JBL_logo.png" Width="40px" OnClick="ImageButton1_Click"/>
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="SearchResult.aspx?speaker=1">Speaker</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="SearchResult.aspx?headset=1">Headset</asp:HyperLink>
+            </div>
+            <div>
+                <asp:TextBox ID="txtSearch" CssClass="searchbox" runat="server" placeholder="search" Width="200px"></asp:TextBox>
+                <asp:Button ID="btnsearch" CssClass="btnSearch" runat="server" Text="&#128269;" OnClick="btnsearch_Click"/>
+            </div>
+            <div style="display:flex;gap:10px;align-items:center;">
+                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="Cart.aspx">Cart</asp:HyperLink>
+                <asp:HyperLink ID="hlUsername" runat="server" NavigateUrl="UserProfile.aspx">[hlUsername]</asp:HyperLink>
+                <asp:Button ID="btnLogout" runat="server" Text="Logout" CssClass="btnLogin" OnClick="btnLogout_Click" />
+            </div>
+        </div>
+        <div style="position:relative;width:100%;top:50px;z-index:0">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

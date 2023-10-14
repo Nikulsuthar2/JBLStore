@@ -1,0 +1,281 @@
+﻿* {
+    margin: 0;
+    font-family: 'Segoe UI';
+    box-sizing:border-box;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: ghostwhite;
+}
+
+.mainbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92vh;
+    position: relative;
+}
+
+.btnAdmin, .btnLogin {
+    cursor:pointer;
+    border: none;
+    background-color: orangered;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btnSignup {
+    cursor: pointer;
+    border: none;
+    color: orangered;
+    background-color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btnSignup:active {
+    background-color: lightgrey;
+}
+
+.btnAdmin:active, .btnLogin:active {
+    cursor: pointer;
+    background-color: darkorange;
+}
+
+.btnPrimary {
+    cursor: pointer;
+    border: none;
+    color: black;
+    font-weight: bold;
+    background-color: lightblue;
+    padding: 5px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btnPrimary:active {
+    color: white;
+    background-color: cornflowerblue;
+}
+
+.divbackblur {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    position: fixed;
+    background-color: #00000040;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #ffffff3d;
+    width: 350px;
+    box-shadow: 0px 0px 20px #00000033;
+}
+
+.menu {
+    background-color: black;
+    display: flex;
+    padding: 5px;
+    gap: 5px;
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 5px 10px;
+    color: white;
+}
+
+.menu a.active {
+    background-color: orangered;
+    border-radius: 10px;
+}
+
+.menu a:hover {
+    background-color: orangered;
+    border-radius: 10px;
+}
+
+.loginform {
+    padding: 10px;
+    border: 1px solid #c5c5c5;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    background-color:ghostwhite;
+}
+
+.input-section {
+}
+
+.input-container {
+    display:flex;
+    align-items:center;
+    gap: 5px;
+}
+
+.inputbox {
+    width: 100%;
+    padding: 5px 0px 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #cbcbcb;
+    background-color: #f1f1f1;
+}
+.inputbox:focus{
+    outline-color:orangered;
+}
+
+.productlistbody {
+    width: 80%;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+}
+
+.tablelist {
+    width: 100%;
+}
+
+.productheader {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px 10px 0px;
+}
+
+.searchbox {
+    padding: 5px 0px 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #cbcbcb;
+    background-color: #f1f1f1;
+}
+
+.searchbox:focus {
+    outline-color: orangered;
+}
+
+.btnSearch {
+    cursor: pointer;
+    border: 1px solid #cbcbcb;
+    background-color: #f1f1f1;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+    .btnSearch:active {
+        border: 1px solid #959595;
+        background-color: #afafaf;
+    }
+
+.btnEdit {
+    cursor: pointer;
+    border: none;
+    background-color: dodgerblue;
+    padding: 5px 20px;
+    color: white;
+    border-radius: 5px;
+    text-decoration:none;
+}
+
+    .btnEdit:active {
+        background-color: blue;
+    }
+
+.btnDelete {
+    cursor: pointer;
+    border: none;
+    background-color: red;
+    padding: 5px 20px;
+    color: white;
+    border-radius: 5px;
+}
+
+    .btnDelete:active {
+        background-color: #d90000;
+    }
+
+.inputbox2 {
+    padding: 5px 0px 5px 10px;
+    margin: 2px 0px 2px 0px;
+    border-radius: 5px;
+    border: 1px solid #cbcbcb;
+    background-color: #f1f1f1;
+}
+
+.inputbox2:focus {
+    outline-color: orangered;
+}
+
+.inputbox2:disabled {
+    background-color: #cbcbcb;
+}
+
+.dash-container{
+    padding: 30px;
+    display:flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.value-card {
+    cursor: pointer;
+    text-decoration:none;
+    background-color: orangered;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    gap: 50px;
+}
+.value-card:active{
+    background-color:orange;
+}
+.card-title, .card-value {
+    cursor: pointer;
+    font-size:20px;
+}
+.big-product-card{
+    padding: 10px;
+    display:flex;
+    align-items:center;
+    gap:60px;
+    width:80%;
+}
+.small-product-card {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+    width: 230px;
+    border: 1px solid #cbcbcb;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+}
+.cart-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.userOrder {
+    display:flex;
+    flex-direction:column;
+    gap: 10px;
+    width:fit-content;
+    padding: 10px;
+    border: 1px solid #cbcbcb;
+    border-radius: 10px;
+    background-color: white;
+}

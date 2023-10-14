@@ -1,0 +1,45 @@
+﻿/* Admin Product list page*/
+
+
+.stocktable, .producttable {
+    width: 100%;
+}
+
+.stocktable, .stocktable th, .stocktable td {
+    border-collapse: collapse;
+    border: 1px solid grey;
+}
+
+.stocktable th {
+    background-color: aliceblue;
+}
+
+.producttable, .producttable th, .producttable td, .ordertable, .ordertable th, .ordertable td {
+    border-collapse: collapse;
+    border: 1px solid grey;
+}
+
+.producttable th, .ordertable th {
+    background-color: aliceblue;
+}
+
+.productlist-price {
+    color: green;
+    font-weight: bold;
+}
+
+.productlist-dcnt {
+    color: red;
+    font-weight: bold;
+}
+.orderdetails {
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid #cbcbcb;
+    border-radius: 10px;
+    display: flex;
+    flex-direction:column;
+    gap: 10px;
+}
+
+

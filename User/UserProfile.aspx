@@ -70,10 +70,6 @@
                                 <td>Status</td>
                                 <td><asp:Label ID="lblstatus" runat="server" Text='<%# Eval("Status") %>' ForeColor='<%# Eval("Status").ToString() == "Completed" ? System.Drawing.Color.Green : System.Drawing.Color.Red%>' Font-Bold="True"></asp:Label></td>
                             </tr>
-                            <tr>
-                                <td>Address</td>
-                                <td><asp:Label ID="lbladdress" runat="server" Text='<%# Eval("address") %>'></asp:Label></td>
-                            </tr>
                         </table>
                     </div>
                     <div>

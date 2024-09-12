@@ -24,10 +24,10 @@ namespace JBLStore.Admin
 
                 if (!IsPostBack)
                 {
-                    lblName.Text = orderData["cname"].ToString();
+                    lblName.Text = userData["name"].ToString();
                     lblEmail.Text = userData["email"].ToString();
-                    lblMobileNo.Text = orderData["contact"].ToString();
-                    lblAddress.Text = orderData["address"].ToString();
+                    lblMobileNo.Text = userData["mobileno"].ToString();
+                    lblAddress.Text = userData["address"].ToString();
 
                     ddlStatus.SelectedValue = orderData["status"].ToString();
 
